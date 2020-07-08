@@ -1,27 +1,18 @@
-            #-*- coding: cp1252 -*-                     #
-            # ------------------------------------------#
-            # Agenda eletronica em Python.              #
-            # @autor: Víctor Donola Ferreira            #
-            # ------------------------------------------#
-
-#------------------------------------------------------------------------------#
+#-*- coding: cp1252 -*-
+# Agenda eletrônica em Python
+# Autor: Víctor Donola Ferreira
 
 
-#--------------------GLOBAL--------------------#
 lista = [] # define uma variável para a lista
 
-# lê os dados do arquivo e joga para a lista
 
+# lê os dados do arquivo e joga para a lista
 arq2 = open("agenda.csv","a+")
 lista = arq2.readlines()
 arq2.close()
-#-----------------------------------------------#
+
     
-
-#------------------------------------------------------------------------------#
-
 # função: menu, constroi o menu
-
 def menu():
     print ("\n", "=" * 50) 
     print ("""\nAGENDA ELETRONICA\n\n
@@ -30,15 +21,10 @@ def menu():
              (2) Deletar:\n
              (3) Mostrar agenda:\n
              (4) Finalizar programa:\n""")
-    
 # fim da função menu
 
 
-
-#------------------------------------------------------------------------------#
-    
-# função: lista_agenda, adiciona, remove e mostra a lista
-    
+# função: lista_agenda, adiciona, remove e mostra a lista    
 def lista_agenda(nome, data, opc):
 
     if( opc == 1):
@@ -78,11 +64,7 @@ def lista_agenda(nome, data, opc):
 # fim da função lista_agenda
 
 
-        
-#------------------------------------------------------------------------------#
 # função principal
-
-
 opc = 0 # variável para o menu
 
 while (opc != 4 ):
@@ -117,7 +99,5 @@ while (opc != 4 ):
 
 lista_agenda(0,0,4) # grava a lista na agenda
 print ("FIM DO PROGRAMA! ")
-
-#------------------------------------------------------------------------------#
 # fim
     
