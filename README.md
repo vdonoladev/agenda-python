@@ -7,7 +7,7 @@ Funções:
 
 menu(): < menu, constrói o menu de opções
 
-lista_agenda(nome, data, opc): < lista_agenda,opc: 
+schedule_list(name, date, opt): < schedule_list,opt: 
 
 1 = Adiciona
 
@@ -25,7 +25,7 @@ Functions:
 
 menu(): < menu, build the options menu
 
-lista_agenda(nome, data, opc): < lista_agenda, opc:
+schedule_list(name, date, opt): < schedule_list, opt:
 
 1 = Add
 

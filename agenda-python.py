@@ -1,103 +1,97 @@
 #-*- coding: cp1252 -*-
-# Agenda eletrônica em Python
-# Autor: Víctor Donola Ferreira
+# Autor: Víctor Donola Ferreira (vdonoladev)
 
 
-lista = [] # define uma variável para a lista
+lista = [] # define variable for the list
 
 
-# lê os dados do arquivo e joga para a lista
-arq2 = open("agenda.csv","a+")
-lista = arq2.readlines()
-arq2.close()
+# reads data from file and plays to list
+arc2 = open("agenda.csv","a+")
+lista = arc2.readlines()
+arc2.close()
 
     
-# função: menu, constroi o menu
+# function: menu, build the menu
 def menu():
     print ("\n", "=" * 50) 
-    print ("""\nAGENDA ELETRONICA\n\n
-             escolha a opção: \n
-             (1) Inserir contato:\n
-             (2) Deletar:\n
-             (3) Mostrar agenda:\n
-             (4) Finalizar programa:\n""")
-# fim da função menu
+    print ("""\nSCHEDULE\n\n
+             Choose the option:\n
+             (1) Insert contact:\n
+             (2) Delete:\n
+             (3) Show:\n
+             (4) End program:\n""")
+# end of menu function
 
 
-# função: lista_agenda, adiciona, remove e mostra a lista    
-def lista_agenda(nome, data, opc):
+# function: schedule_list, add, remove and show the list   
+def schedule_list(nome, data, opc):
 
-    if( opc == 1):
-        contato = nome + ";" + data + "\n" # concatena o 'nome' ';' e 'data'
-        lista.append(contato)
-        lista.sort() # ordena a lista por prioridade
+    if( opt == 1):
+        contact = name + ";" + date + "\n" # concatenates the 'name' ';' and 'date'
+        lista.append(contact)
+        lista.sort() # sorts the list by priority
 
-    elif (opc == 2):
+    elif (opt == 2):
         print ("=" * 30)
-        if ( lista == []): # se lista for vazia
-            print ("Lista Vazia\n")
+        if ( lista == []): # if list is empty
+            print ("Empty List\n")
         else:
-            lista.pop(0)# remove o elemento de maior prioridade, ou seja, índice 0 da lista
-            print ("Removido o elemento de maior prioridade")
+            lista.pop(0)# removes the highest priority element, that is, index 0 from the list
+            print ("Removed the highest priority element")
         print ("=" * 30)
 
-    elif (opc == 3):
+    elif (opt == 3):
         print ("=" * 30)
         if (lista == []):
-            print ("Lista vazia!")
+            print ("Empty List!")
         else:
-            print ("Nome:   | Data: ")
+            print ("Name:   | Date: ")
             for i in lista:
                 print (i)
         print ("=" * 30)
 
-    elif (opc == 4):
-        arq = open("agenda.csv","w") # escreve por cima do arquivo antigo (atualiza lista)
-        tam = len(lista) # recebe o tamanho da lista
-        # for que insere os valores no arquivo separado por ';' sendo nome = índice par e data = impar
+    elif (opt == 4):
+        arc = open("agenda.csv","w") # write over the old file (update list)
+        siz = len(lista) # receives list size
+        
+        # which inserts the values in the file separated by ';' being name = even index and date = odd
+        for i in range(siz):
+        	arc.write(lista[i])
+        arc.close()
 
-        for i in range(tam):
-            arq.write(lista[i])
-
-        arq.close()
-
-# fim da função lista_agenda
+# end of function schedule_list
 
 
-# função principal
-opc = 0 # variável para o menu
+# main function
+opt = 0 # variable for the menu
 
-while (opc != 4 ):
+while (opt != 4 ):
 
-    menu() # chama o menu
+    menu() # calls the menu
 
     while True:
         try:
-            opc = int(input('')) # recebe a opção
+            opt = int(input('')) # receives the option
             break
         except:
-            print ("Digite somente numeros válidos")
+            print ("Please enter only valid numbers")
 
-    if ( opc == 1 ):
-        nome = input("Informe o nome do contato: ")
-        # print ("Informe o nome do contato: \n")
-        # nome = input('\n: ')
+    if (opt == 1):
+        name = input("Enter the contact name: ")
+        
 
-        data = input("Informe a data de nascimento: ")
-        #print ("informe a data de nascimento: \n")
-        # data = input('\n: ')
+        date = input("Enter the date of birth: ")
+        
 
-        lista_agenda(nome, data, 1) # chama a função para inserir na lista
+        schedule_list(name, date, 1) # calls the function to insert in the list
 
-    elif ( opc == 2):
-        lista_agenda(0,0,2) # chama a função para deletar o nome na lista
+    elif (opt == 2):
+        schedule_list(0,0,2) # calls the function to delete the name in the list
 
-    elif (opc == 3): # chama a função para mostrar na tela
-        print ("Lista de contatos: ")
-        lista_agenda(0,0,3)
+    elif (opt == 3): # calls the function to show on the screen
+        print ("Contact list: ")
+        schedule_list(0,0,3)
                 
 
-lista_agenda(0,0,4) # grava a lista na agenda
-print ("FIM DO PROGRAMA! ")
-# fim
-    
+schedule_list(0,0,4) # save the list
+print ("END OF PROGRAM!")
