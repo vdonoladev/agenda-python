@@ -1,24 +1,6 @@
 # agenda-python
 <h3>Português</h3>
 
-Agenda Python
-
-Funções:
-
-menu(): < menu, constrói o menu de opções
-
-schedule_list(name, date, opt): < schedule_list,opt: 
-
-1 = Adiciona
-
-2 = Remove 
-
-3 = Mostra 
-
-4 = Grava a lista
-
-<h3>Inglês (English)</h3>
-
 Schedule Python
 
 Functions:

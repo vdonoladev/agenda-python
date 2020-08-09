@@ -1,4 +1,3 @@
-#-*- coding: cp1252 -*-
 # Autor: Víctor Donola Ferreira (vdonoladev)
 
 
