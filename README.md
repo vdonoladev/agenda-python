@@ -1,5 +1,4 @@
 # agenda-python
-<h3>Português</h3>
 
 Schedule Python
 
