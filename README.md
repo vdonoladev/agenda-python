@@ -1,6 +1,4 @@
-# agenda-python
-
-Schedule Python
+# Schedule Python
 
 Functions:
 
